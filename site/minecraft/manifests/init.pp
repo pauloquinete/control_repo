@@ -16,9 +16,9 @@ class minecraft (
     source => $java_package,
     provider => 'rpm',
   }
-  file {"$(install_dir)/eula.txt":
-    ensure  => file,
-    content => 'eula=true',
+  file {"${install_dir}/eula.txt":
+    ensure => file,
+    content => 'eula=true'
   }
   file {'/etc/systemd/system/minecraft.service':
     ensure => file,
