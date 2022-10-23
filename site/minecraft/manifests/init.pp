@@ -16,7 +16,7 @@ class minecraft (
     source => $java_package,
     provider => 'rpm',
   }
-  file {"${install_dir}/eula.txt":
+  file { "${install_dir}/eula.txt":
     ensure => file,
     content => 'eula=true'
   }
