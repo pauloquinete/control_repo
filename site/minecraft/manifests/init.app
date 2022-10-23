@@ -8,6 +8,8 @@ class minecraft {
   }
   package {'java':
     ensure => present,
+    source => 'https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.rpm',
+    provider => 'rpm',
   }
   file {'/opt/minecraft/eula.txt':
     ensure  => file,
@@ -16,5 +18,9 @@ class minecraft {
   file {'/etc/systemd/system/minecraft.service':
     ensure => file,
     source => 'puppet:///modules/minecraft/minecraft.service',
+  }
+  service {'minecraft':
+    ensure  => running,
+    enabled => true,
   }
 }
