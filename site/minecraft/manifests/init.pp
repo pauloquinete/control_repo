@@ -3,10 +3,10 @@ class minecraft (
   $install_dir = '/opt/minecraft'
   $java_package = 'https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.rpm'
 ){
-  file {$install_dir:
+  file { $install_dir:
     ensure => directory,
   }
-  file {"$(install_dir)/minecraft_server.jar':
+  file { "$(install_dir)/minecraft_server.jar':
     ensure => file,
     source => $url,
     before => Service['minecraft'],
