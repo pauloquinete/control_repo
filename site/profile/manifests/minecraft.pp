@@ -1,5 +1,5 @@
 class profile::minecraft {
   class {'minecraft':
-    install_dor => '/srv/minecraft'
+    install_dir => '/srv/minecraft'
   }
 }
